@@ -1,0 +1,6 @@
+/mysql-data/
+/src/composer.lock
+/src/vendor/
+/mysql/
+composer.phar
+*.log *.logs

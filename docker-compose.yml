@@ -1,0 +1,37 @@
+# Use root/example user/password credentials
+version: '3.1'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html/
+    container_name: pbweb
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: database
+    ports:
+      - "8889:3306"
+    container_name: pbdb
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    container_name: pbadminer
+
+volumes:
+  mysql-data:
