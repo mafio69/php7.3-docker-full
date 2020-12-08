@@ -4,3 +4,4 @@
 /mysql/
 composer.phar
 *.log *.logs
+.idea
