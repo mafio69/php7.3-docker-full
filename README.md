@@ -27,7 +27,7 @@ https://registry.hub.docker.com/_/admine
 [github](https://github.com/mafio69)    
   
 ### Access problems  
-`sudo groupadd docker - create a docker group`  - Create group "docker".  
-`sudo usermod -aG docker $ USER` - Adding the current user to the docker group.  
-`sudo chown :docker src` - Change of owner to the docker group.  
-`sudo sudo chmod 0775 -R ./src/vendor` - Grant full rights to the group (recursive).
+`sudo groupadd docker - create a docker group`  - Create group "docker".    
+`sudo usermod -aG docker $ USER` - Adding the current user to the docker group.    
+`sudo chown :docker src` - Change of owner to the docker group.    
+`sudo sudo chmod 0775 -R ./src/vendor` - Grant full rights to the group (recursive).  
