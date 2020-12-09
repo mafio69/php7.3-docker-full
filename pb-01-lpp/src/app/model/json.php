@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\model;
-
 
 use App\common\AppConstans;
 
