@@ -1,0 +1,54 @@
+{
+    "collection": "winter",
+    "id": 1315475,
+    "brands": {
+        "1": {
+            "name": "XXX",
+            "description": "New winter collection",
+            "items": {
+                "1000": {
+                    "name": "jacket",
+                    "url": "http://www.example.com",
+                    "prices": {
+                        "1001": {
+                            "description": "Initial price",
+                            "priceInEuro": 108,
+                            "arrival": "2017-01-03",
+                            "due": "2017-01-20"
+                        },
+                        "1002": {
+                            "description": "clearance price",
+                            "priceInEuro": 101,
+                            "arrival": "2017-03-01",
+                            "due": "2017-04-01"
+                        }
+                    }
+                }
+            }
+        },
+        "2": {
+            "name": "YYY",
+            "description": "Promotional collection of YYY",
+            "items": {
+                "2000": {
+                    "name": "skirt",
+                    "url": "http://www.anotherexample.com",
+                    "prices": {
+                        "2001": {
+                            "description": "Initial price",
+                            "priceInEuro": 37,
+                            "arrival": "2017-01-01",
+                            "due": "2017-01-30"
+                        },
+                        "2002": {
+                            "description": "First promo price",
+                            "priceInEuro": 37,
+                            "arrival": "2017-01-31",
+                            "due": "2017-02-15"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
