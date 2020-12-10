@@ -13,8 +13,8 @@ To run on the system, docker and docker-compose must be installed.
 - `docker-compose up` - Second command to start docker and after building the container.
 - `docker ps` - List of current containers.
 - `docker exec -it pbweb bash` - Entering the container command line the name of "pbweb" can be changed before running
-  in docker-compose.yml.    
-  Note: All commands are executed in the directory where docker-compose.yml is located (l:13).
+  in docker-compose.yml(l:13).    
+  Note: All commands are executed in the directory where docker-compose.yml is located .
 
 ## Links:
 
