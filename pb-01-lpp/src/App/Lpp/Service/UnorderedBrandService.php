@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Lpp\Service;
 
 use App\Lpp\Entity\Brand;
@@ -43,6 +44,7 @@ class UnorderedBrandService implements BrandServiceInterface
     {
         return $this->itemService->getItemByCollectionName($collectionName);
     }
+
     /**
      * @param string $collectionName Name of the collection to search for.
      *
