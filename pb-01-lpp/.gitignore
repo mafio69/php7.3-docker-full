@@ -1,2 +1,4 @@
 
 /source/
+/src/.phpunit.result.cache
+/mysql/
