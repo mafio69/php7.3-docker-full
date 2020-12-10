@@ -7,13 +7,13 @@ use DateTime;
 /**
  * Represents a single price from a search result
  * related to a single item.
- * 
+ *
  */
 class Price
 {
     /**
      * Description text for the price
-     * 
+     *
      * @var string
      */
     public $description;
@@ -32,6 +32,12 @@ class Price
      * @var DateTime
      */
     public $dueDate;
+    /**
+     * Price in euro
+     *
+     * @var int
+     */
+    public $priceInEuro;
 
     /**
      * @return string
@@ -104,11 +110,4 @@ class Price
         $this->dueDate = $dueDate;
         return $this;
     }
-
-    /**
-     * Price in euro
-     * 
-     * @var int
-     */
-    public $priceInEuro;
 }

@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Lpp\Entity;
 
 /**
  * Represents a single item from a search result.
- * 
+ *
  */
 class Item
 {

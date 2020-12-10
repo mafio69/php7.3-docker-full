@@ -1,9 +1,12 @@
 <?php
-require ('vendor/autoload.php');
+require('vendor/autoload.php');
 
-use App\common\AppConstans;
+use App\common\AppConstants;
+use App\controller\Start;
+use App\Lpp\Service\ItemService;
+use App\Lpp\Service\tempUnorderedService;
+use Tests\tempUnorderedServiceTest;
 
-new AppConstans();
+new AppConstants();
 
-print_r(BASE_PATH);
-phpinfo();
+echo "TEST WORK";

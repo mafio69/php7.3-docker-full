@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="vendor/autoload.php"
          colors="true"
+         bootstrap="App/Common/Bootstrap/Bootstrap.php"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="true"
-         printerClass="PHPUnit_TextUI_ResultPrinter"
->
+         printerClass="PHPUnit_TextUI_ResultPrinter">
     <testsuites>
         <testsuite name="Application Test Suite">
             <directory>./tests/</directory>
