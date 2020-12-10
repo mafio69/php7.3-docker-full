@@ -3,12 +3,13 @@
 namespace Tests;
 
 use App\Common\AppConstants;
+use App\Common\Exception\ValidationUrlException;
 use App\Lpp\Entity\Item;
 use App\Lpp\Entity\Price;
 use App\Lpp\Service\ItemService;
-use App\Lpp\Service\tempUnorderedService;
+use App\Lpp\Service\UnorderedBrandService;
 
-class TempUnorderedServiceTest extends BaseTestCase
+class testUnorderedServiceTest extends BaseTestCase
 {
     const COLLECTION_NAME = "jacket";
     const BRAND_NAME = "XXX";
@@ -19,8 +20,14 @@ class TempUnorderedServiceTest extends BaseTestCase
     public function testGetBrandsForCollection()
     {
         $itemService = new ItemService(AppConstants::JSON_FILE_NAME);
-        $tempUnorderedServiceTest = new tempUnorderedService($itemService);
-        $result = $tempUnorderedServiceTest->itemService->getItemByCollectionName(self::COLLECTION_NAME);
+        $unorderedBrandService = new UnorderedBrandService($itemService);
+        $result = null;
+
+        try {
+            $result = $unorderedBrandService->itemService->getItemByCollectionName(self::COLLECTION_NAME);
+        } catch (ValidationUrlException $e) {
+            echo "Validation error - wrong url";
+        }
 
         $this->assertIsArray($result);
         $this->assertIsArray($result['prices']);
@@ -31,8 +38,8 @@ class TempUnorderedServiceTest extends BaseTestCase
     public function testGetPriceByBrandsName()
     {
         $itemService = new ItemService(self::JASON_FILE_TO_TEST);
-        $tempUnorderedServiceTest = new tempUnorderedService($itemService);
-        $result = $tempUnorderedServiceTest->itemService->getPriceByBrandName(self::BRAND_NAME);
+        $unorderedBrandService = new UnorderedBrandService($itemService);
+        $result = $unorderedBrandService->itemService->getPriceByBrandName(self::BRAND_NAME);
 
         $this->assertIsArray($result);
         $this->assertTrue($result['description'] === self::PRICE_DESCRIPTION);

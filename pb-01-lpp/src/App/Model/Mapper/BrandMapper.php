@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Mapper;
 
 use App\Lpp\Entity\Brand;

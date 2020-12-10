@@ -2,6 +2,7 @@
 
 namespace App\Lpp\Service;
 
+use App\Common\Exception\ValidationUrlException;
 use App\Lpp\Entity\Brand;
 use App\Lpp\Entity\Item;
 use App\Lpp\Entity\Price;
@@ -9,6 +10,7 @@ use App\Model\Json;
 use App\Model\Mapper\BrandMapper;
 use App\Model\Mapper\ItemMapper;
 use App\Model\Mapper\PriceMapper;
+
 
 class ItemService implements ItemServiceInterface
 {
@@ -33,12 +35,11 @@ class ItemService implements ItemServiceInterface
     public function getResultForCollectionId(int $collectionId): ?array
     {
         $data = $this->setDataJason();
-        $brandMapper = new BrandMapper();
         $brands = null;
 
         if ($data['id'] === $collectionId) {
             foreach ($data['brands'] as $brand) {
-                $brands[] = $brandMapper->mapToBrand($brand);
+                $brands[] = (new BrandMapper())->mapToBrand($brand);
             }
         }
         return $brands ?? null;
@@ -49,24 +50,29 @@ class ItemService implements ItemServiceInterface
      */
     public function setDataJason(): array
     {
-      return (new Json())->getJson($this->jasonName);
+        return (new Json())->getJson($this->jasonName);
     }
 
     /**
      * @param string $collectionName
      *
      * @return Item[]|null
+     *
+     * @throws ValidationUrlException
      */
     public function getItemByCollectionName(string $collectionName): ?array
     {
         $data = $this->setDataJason();
-        $itemMapper = new ItemMapper();
         $items = null;
 
         foreach ($data['brands'] as $brand) {
             if ($brand['name'] = $collectionName) {
                 foreach ($brand['items'] as $items) {
-                    $items[] = $itemMapper->mapToItem($items);
+                    if (filter_var($items['url'], FILTER_VALIDATE_URL)) {
+                        $items[] = (new ItemMapper())->mapToItem($items);
+                    } else {
+                        throw new ValidationUrlException('Wrong url address');
+                    }
                 }
             }
         }
@@ -82,10 +88,9 @@ class ItemService implements ItemServiceInterface
     public function getPriceByBrandName(string $brandName): ?array
     {
         $data = $this->setDataJason();
-        $priceMapper = new PriceMapper();
         $price = [];
 
-        foreach ($data['brands'] as $coords => $brand) {
+        foreach ($data['brands'] as $brand) {
             if ($brand['name'] === $brandName) {
                 foreach ($brand['items'] as $coords => $items) {
                     foreach ($brand['items'][$coords]['prices'] as $price) {

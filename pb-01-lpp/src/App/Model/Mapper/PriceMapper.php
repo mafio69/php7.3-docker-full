@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Mapper;
 
 use App\Lpp\Entity\Price;
@@ -20,12 +21,12 @@ class PriceMapper
      */
     public function mapToPrice(array $data): Price
     {
-            $price = new Price();
-            $price->setDescription($data['description']);
-            $price->setArrivalDate($data['arrival']);
-            $price->setPriceInEuro($data['priceInEuro']);
-            $price->setDueDate($data['due']);
+        $price = new Price();
+        $price->setDescription($data['description']);
+        $price->setArrivalDate($data['arrival']);
+        $price->setPriceInEuro($data['priceInEuro']);
+        $price->setDueDate($data['due']);
 
-            return $price;
+        return $price;
     }
 }
