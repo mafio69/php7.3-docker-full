@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Lpp\Service;
 
 use App\Common\Exception\ValidationUrlException;
@@ -10,7 +9,6 @@ use App\Model\Json;
 use App\Model\Mapper\BrandMapper;
 use App\Model\Mapper\ItemMapper;
 use App\Model\Mapper\PriceMapper;
-
 
 class ItemService implements ItemServiceInterface
 {

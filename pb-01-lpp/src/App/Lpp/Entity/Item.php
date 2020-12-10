@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Lpp\Entity;
 
 /**
@@ -33,7 +32,7 @@ class Item
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -42,7 +41,7 @@ class Item
      * @param string $name
      * @return Item
      */
-    public function setName($name)
+    public function setName(string $name): Item
     {
         $this->name = $name;
         return $this;
@@ -51,7 +50,7 @@ class Item
     /**
      * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -60,7 +59,7 @@ class Item
      * @param string $url
      * @return Item
      */
-    public function setUrl($url)
+    public function setUrl(string $url): Item
     {
         $this->url = $url;
         return $this;
@@ -69,7 +68,7 @@ class Item
     /**
      * @return Price[]
      */
-    public function getPrices()
+    public function getPrices(): array
     {
         return $this->prices;
     }
@@ -78,7 +77,7 @@ class Item
      * @param Price[] $prices
      * @return Item
      */
-    public function setPrices($prices)
+    public function setPrices(array $prices): Item
     {
         $this->prices = $prices;
         return $this;

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Lpp\Entity;
 
 /**
@@ -32,16 +31,17 @@ class Brand
     /**
      * @return string
      */
-    public function getBrand()
+    public function getBrand(): string
     {
         return $this->brand;
     }
 
     /**
      * @param string $brand
+     *
      * @return Brand
      */
-    public function setBrand($brand)
+    public function setBrand($brand): Brand
     {
         $this->brand = $brand;
         return $this;
@@ -50,16 +50,17 @@ class Brand
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
     /**
      * @param string $description
+     *
      * @return Brand
      */
-    public function setDescription($description)
+    public function setDescription(string $description): Brand
     {
         $this->description = $description;
         return $this;
@@ -68,7 +69,7 @@ class Brand
     /**
      * @return Item[]
      */
-    public function getItems()
+    public function getItems(): array
     {
         return $this->items;
     }
@@ -77,7 +78,7 @@ class Brand
      * @param Item[] $items
      * @return Brand
      */
-    public function setItems($items)
+    public function setItems(array $items): Brand
     {
         $this->items = $items;
         return $this;

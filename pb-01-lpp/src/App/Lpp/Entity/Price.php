@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Lpp\Entity;
 
 use DateTime;
@@ -42,7 +41,7 @@ class Price
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -51,7 +50,7 @@ class Price
      * @param string $description
      * @return Price
      */
-    public function setDescription($description)
+    public function setDescription(string $description): Price
     {
         $this->description = $description;
         return $this;
@@ -60,7 +59,7 @@ class Price
     /**
      * @return int
      */
-    public function getPriceInEuro()
+    public function getPriceInEuro(): int
     {
         return $this->priceInEuro;
     }
@@ -69,7 +68,7 @@ class Price
      * @param int $priceInEuro
      * @return Price
      */
-    public function setPriceInEuro($priceInEuro)
+    public function setPriceInEuro(int $priceInEuro): Price
     {
         $this->priceInEuro = $priceInEuro;
         return $this;
@@ -78,7 +77,7 @@ class Price
     /**
      * @return DateTime
      */
-    public function getArrivalDate()
+    public function getArrivalDate(): DateTime
     {
         return $this->arrivalDate;
     }
@@ -87,7 +86,7 @@ class Price
      * @param DateTime $arrivalDate
      * @return Price
      */
-    public function setArrivalDate($arrivalDate)
+    public function setArrivalDate(DateTime $arrivalDate): Price
     {
         $this->arrivalDate = $arrivalDate;
         return $this;
@@ -96,7 +95,7 @@ class Price
     /**
      * @return DateTime
      */
-    public function getDueDate()
+    public function getDueDate(): DateTime
     {
         return $this->dueDate;
     }
@@ -105,7 +104,7 @@ class Price
      * @param DateTime $dueDate
      * @return Price
      */
-    public function setDueDate($dueDate)
+    public function setDueDate(DateTime $dueDate): Price
     {
         $this->dueDate = $dueDate;
         return $this;

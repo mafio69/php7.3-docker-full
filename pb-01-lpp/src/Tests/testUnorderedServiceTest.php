@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests;
 
 use App\Common\AppConstants;

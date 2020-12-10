@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Controller;
-
 
 class Start
 {

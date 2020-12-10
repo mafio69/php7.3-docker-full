@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Lpp\Service;
 
 use App\Lpp\Entity\Brand;
-
 
 /**
  * Represents the connection to a specific item store.

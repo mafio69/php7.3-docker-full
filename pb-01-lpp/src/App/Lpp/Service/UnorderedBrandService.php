@@ -1,8 +1,6 @@
 <?php
-
 namespace App\Lpp\Service;
 
-use App\Common\Exception\ValidationUrlException;
 use App\Lpp\Entity\Brand;
 use InvalidArgumentException;
 
