@@ -10,6 +10,7 @@ use App\Model\Json;
 use App\Model\Mapper\BrandMapper;
 use App\Model\Mapper\ItemMapper;
 use App\Model\Mapper\PriceMapper;
+use Exception;
 
 class ItemService implements ItemServiceInterface
 {
@@ -83,6 +84,8 @@ class ItemService implements ItemServiceInterface
      * @param string $brandName
      *
      * @return Price[]|null
+     *
+     * @throws Exception
      */
     public function getPriceByBrandName(string $brandName): ?array
     {

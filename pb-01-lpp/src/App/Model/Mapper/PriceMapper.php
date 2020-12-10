@@ -3,6 +3,8 @@
 namespace App\Model\Mapper;
 
 use App\Lpp\Entity\Price;
+use DateTime;
+use Exception;
 
 class PriceMapper
 {
@@ -18,14 +20,17 @@ class PriceMapper
      * @param array $data
      *
      * @return Price
+     *
+     * @throws Exception
      */
     public function mapToPrice(array $data): Price
     {
         $price = new Price();
+
         $price->setDescription($data['description']);
-        $price->setArrivalDate($data['arrival']);
-        $price->setPriceInEuro($data['priceInEuro']);
-        $price->setDueDate($data['due']);
+        $price->setArrivalDate(new DateTime($data['arrival']));
+        $price->setPriceInEuro(strtotime($data['priceInEuro']));
+        $price->setDueDate(new DateTime($data['due']));
 
         return $price;
     }
